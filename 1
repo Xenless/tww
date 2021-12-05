@@ -1,0 +1,19 @@
+game:GetService("UserInputService").InputBegan:Connect(function(i, gpe)
+if not gpe and i.KeyCode == Enum.KeyCode.J then
+local aux = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Upbolt/Hydroxide/revision/ohaux.lua"))()
+local scriptPath = game:GetService("ReplicatedStorage").Modules.World.WildLife.WildLife.Animal
+local closureName = "Unnamed function"
+local upvalueIndex = 1
+local closureConstants = {
+	[1] = "require",
+	[3] = "LocalPlayer",
+	[4] = "PlayerScripts",
+	[5] = "PlayerModule",
+	[6] = "ControlModule",
+	[7] = "GetMoveVector"
+}
+local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
+debug.getupvalue(closure, upvalueIndex)["MaxBoosts"] = math.huge
+debug.getupvalue(closure, upvalueIndex)["Boosts"] = math.huge
+end
+end)
