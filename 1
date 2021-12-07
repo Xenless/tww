@@ -15,5 +15,22 @@ local closureConstants = {
 local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
 debug.getupvalue(closure, upvalueIndex)["MaxBoosts"] = math.huge
 debug.getupvalue(closure, upvalueIndex)["Boosts"] = math.huge
+Notification.Notify("Infinite Boost", "Has been enabled!", "rbxassetid://7258714296", {
+    Duration = 2,
+    
+    TitleSettings = {
+        TextXAlignment = Enum.TextXAlignment.Center,
+        Font = Enum.Font.SourceSansSemibold,
+    },
+
+    GradientSettings = {
+        GradientEnabled = false,
+        SolidColorEnabled = true,
+        SolidColor = Color3.fromRGB(124, 83, 240),
+        Retract = true
+    }
+})
+end
+end)
 end
 end)
