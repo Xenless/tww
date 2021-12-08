@@ -15,3 +15,5 @@ local closureConstants = {
 local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
 debug.getupvalue(closure, upvalueIndex)["MaxBoosts"] = math.huge
 debug.getupvalue(closure, upvalueIndex)["Boosts"] = math.huge
+end
+end)
